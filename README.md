@@ -85,3 +85,6 @@ la cual da lugar a una asignación de valores de color más suave y continuada, 
 lo cual es suficiente para eliminar los artefactos de la imagen, resultando en la textura final:
 
 ![](./imagenes/Aspose.Words.8ca463e0-9ff2-4aa7-a394-c238ab0c023f.010.jpeg)
+
+*enlace*
+https://youtu.be/ODRTeVA0sBU
