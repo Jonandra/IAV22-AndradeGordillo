@@ -75,11 +75,15 @@ public class TerrainGenerator : MonoBehaviour
     }
     void Start()
     {
+       
+
         this.noiseScale = Random.Range(this.lowerScaleValue, this.highestScaleValue);
         this.noiseScaleModifier = Random.Range(this.lowerHeightModifierValue, this.highestHeightModifierValue);
 
         this.InitalizeCubes();
         this.GenerateCubes();
+
+        transform.position = transform.position + new Vector3(-worldWidthX / 2, 0, -worldWidthZ / 2);
     }
         
 }
