@@ -427,7 +427,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791145942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.4, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 696556964}
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpSpeed: 8
-  gravity: -9.8
+  gravity: -15
   jumpHeight: 1.5
   groundCheck: {fileID: 1976931921}
   groundDistance: 0.4
@@ -631,10 +631,10 @@ MonoBehaviour:
   cubePrefab: {fileID: 1559498387620398568, guid: ab3e7a51cde7c594993690d3e76b6af1, type: 3}
   worldWidthX: 100
   worldWidthZ: 100
-  lowerScaleValue: 0
-  highestScaleValue: 40
-  lowerHeightModifierValue: 0
-  highestHeightModifierValue: 15
+  lowerScaleValue: 4
+  highestScaleValue: 12
+  lowerHeightModifierValue: 2
+  highestHeightModifierValue: 6
 --- !u!4 &1080429701
 Transform:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080429699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.535881, y: -2.3307114, z: 134}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
