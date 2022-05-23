@@ -6,6 +6,8 @@ using System.Collections;
 // Try varying the xOrg, yOrg and scale values in the inspector
 // while in Play mode to see the effect they have on the noise.
 
+
+
 public class UnityNoiseGenerator : MonoBehaviour
 {
     // Width and height of the texture in pixels.
@@ -15,6 +17,8 @@ public class UnityNoiseGenerator : MonoBehaviour
     // The origin of the sampled area in the plane.
     public float xOrg;
     public float yOrg;
+
+    PerlinNoise noiseFunc;
 
     // The number of cycles of the basic noise pattern that are repeated
     // over the width and height of the texture.
@@ -29,6 +33,7 @@ public class UnityNoiseGenerator : MonoBehaviour
     {
         noiseTex = new Texture2D(pixWidth, pixHeight);
         pix = new Color[noiseTex.width * noiseTex.height];
+        noiseFunc = GetComponent<PerlinNoise>();
     }
     void Start()
     {
@@ -54,7 +59,9 @@ public class UnityNoiseGenerator : MonoBehaviour
             {
                 float xCoord = xOrg + x / noiseTex.width * scale;
                 float yCoord = yOrg + y / noiseTex.height * scale;
-                float sample = Mathf.PerlinNoise(xCoord, yCoord);
+                float sample = noiseFunc.GetNoise(xCoord,yCoord);
+                sample = sample * 0.5f + 0.5f;
+                //float sample = Mathf.PerlinNoise(xCoord, yCoord);               
                 pix[(int)y * noiseTex.width + (int)x] = new Color(sample, sample, sample);
                 x++;
             }
