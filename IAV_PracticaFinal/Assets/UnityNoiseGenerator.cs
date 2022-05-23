@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections;
 
@@ -23,14 +24,22 @@ public class UnityNoiseGenerator : MonoBehaviour
     private Color[] pix;
     private Renderer rend;
 
-    void Start()
-    {
-        rend = GetComponent<Renderer>();
 
-        // Set up the texture and a Color array to hold pixels during processing.
+    void Awake()
+    {
         noiseTex = new Texture2D(pixWidth, pixHeight);
         pix = new Color[noiseTex.width * noiseTex.height];
+    }
+    void Start()
+    {
+
+        xOrg = Random.Range(0f,10000f);
+        yOrg = Random.Range(0f,10000f);
+
+        rend = GetComponent<Renderer>();
+        CalcNoise();
         rend.material.mainTexture = noiseTex;
+       
     }
 
     void CalcNoise()
@@ -57,8 +66,8 @@ public class UnityNoiseGenerator : MonoBehaviour
         noiseTex.Apply();
     }
 
-    void Update()
-    {
-        CalcNoise();
-    }
+    // void Update()
+    // {
+    //     CalcNoise();
+    // }
 }
