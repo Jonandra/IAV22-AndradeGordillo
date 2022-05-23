@@ -6,8 +6,6 @@ using System.Collections;
 // Try varying the xOrg, yOrg and scale values in the inspector
 // while in Play mode to see the effect they have on the noise.
 
-
-
 public class UnityNoiseGenerator : MonoBehaviour
 {
     // Width and height of the texture in pixels.
@@ -49,7 +47,6 @@ public class UnityNoiseGenerator : MonoBehaviour
 
     void CalcNoise()
     {
-        // For each pixel in the texture...
         float y = 0.0F;
 
         while (y < noiseTex.height)
@@ -60,21 +57,18 @@ public class UnityNoiseGenerator : MonoBehaviour
                 float xCoord = xOrg + x / noiseTex.width * scale;
                 float yCoord = yOrg + y / noiseTex.height * scale;
                 float sample = noiseFunc.GetNoise(xCoord,yCoord);
-                sample = sample * 0.5f + 0.5f;
-                //float sample = Mathf.PerlinNoise(xCoord, yCoord);               
+               
+                          
                 pix[(int)y * noiseTex.width + (int)x] = new Color(sample, sample, sample);
                 x++;
             }
             y++;
         }
 
-        // Copy the pixel data to the texture and load it into the GPU.
+      
         noiseTex.SetPixels(pix);
         noiseTex.Apply();
     }
 
-    // void Update()
-    // {
-    //     CalcNoise();
-    // }
+   
 }

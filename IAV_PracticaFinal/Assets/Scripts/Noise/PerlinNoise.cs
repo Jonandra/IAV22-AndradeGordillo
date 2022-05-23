@@ -77,7 +77,7 @@ public class PerlinNoise : MonoBehaviour
 		Vector2 bottomRight = new Vector2(xf - 1.0f, yf);
 		Vector2 bottomLeft = new Vector2(xf, yf);
 
-		//Select a value in the array for each of the 4 corners
+		
 		int valueTopRight = P[P[X + 1] + Y + 1];
 		int valueTopLeft = P[P[X] + Y + 1];
 		int valueBottomRight = P[P[X + 1] + Y];
@@ -91,12 +91,12 @@ public class PerlinNoise : MonoBehaviour
 		float u = Fade(xf);
 		float v = Fade(yf);
 
-		return Lerp(u,
+		float bilinearInterpolation =  Lerp(u,
 			Lerp(v, dotBottomLeft, dotTopLeft),
 			Lerp(v, dotBottomRight, dotTopRight)
 		);
-	
-
+		bilinearInterpolation = bilinearInterpolation * 0.5f + 0.5f;
+		return bilinearInterpolation;
 
 	}
 	void Awake()
