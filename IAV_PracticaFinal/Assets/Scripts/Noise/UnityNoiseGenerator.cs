@@ -40,9 +40,13 @@ public class UnityNoiseGenerator : MonoBehaviour
         yOrg = Random.Range(0f,10000f);
 
         rend = GetComponent<Renderer>();
-        CalcNoise();
+       
         rend.material.mainTexture = noiseTex;
        
+    }
+    private void Update()
+    {
+        CalcNoise();
     }
 
     void CalcNoise()
